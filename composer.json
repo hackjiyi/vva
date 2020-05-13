@@ -10,6 +10,5 @@
         "psr-4": {"Vva\\": "src/Vva"}
     },
     "require-dev": {
-        "firebase/php-jwt": "5.2"
     }
 }
