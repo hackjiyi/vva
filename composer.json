@@ -1,0 +1,14 @@
+{
+    "name": "vva/php-sdk",
+    "type": "library",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+     "autoload": {
+        "psr-4": {"Vva\\": "src/Vva"}
+    },
+    "require-dev": {
+        "firebase/php-jwt": "5.2"
+    }
+}
