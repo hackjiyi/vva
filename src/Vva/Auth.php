@@ -14,19 +14,19 @@ final class Auth
      *
      * @var string $access_key1
      */
-    private $access_key;
+    private $access_key = '';
     
     /**
      * 
      * @var string $secret_key
      */
-    private $secret_key;
+    private $secret_key = '';
 
     /**
      *
      * @var string $jwt_key
      */
-    private $jwt_key;
+    private $jwt_key = '';
 
     /**
      * 构造函数
@@ -135,9 +135,9 @@ final class Auth
      * @param string $alg 加密算法
      * @return string
      */
-    public function jwtEncode(array $payload, $alg = "HS256")
+    public static function jwtEncode(array $payload, $jwt_key, $alg = "HS256")
     {
-        $jwt_str = JWT::encode($payload, $this->jwt_key, $alg);
+        $jwt_str = JWT::encode($payload, $jwt_key, $alg);
         
         return $jwt_str;
     }
@@ -149,9 +149,9 @@ final class Auth
      * @param string $alg 加密算法
      * @return string
      */
-    public function jwtDecode(string $jwt_encode, $alg = "HS256")
+    public static function jwtDecode(string $jwt_encode, $jwt_key, $alg = "HS256")
     {
-        $jwt_str = JWT::encode($jwt_encode, $this->jwt_key, $alg);
+        $jwt_str = JWT::encode($jwt_encode, $jwt_key, $alg);
         
         return $jwt_str;
     }

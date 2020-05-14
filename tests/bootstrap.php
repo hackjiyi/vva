@@ -15,8 +15,7 @@ $payload = array(
 $access_key = 'abcdefghklmnopq';
 $secret_key = '1234567890';
 
-$auth = new Auth($access_key, $secret_key, $key);
-echo $auth->jwtEncode($payload);
+echo Auth::jwtEncode($payload, $key);
 //echo $auth->getSignWithData(array('11111' => 2222, 'color' => 'red', 'above' => true));
 //echo "\r\n";
 //
