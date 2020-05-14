@@ -2,6 +2,7 @@
     "name": "vva/php-sdk",
     "type": "library",
     "minimum-stability": "dev",
+    "license": "MIT",
     "require": {
         "php": ">=7.0",
         "firebase/php-jwt": ">=5.2"
