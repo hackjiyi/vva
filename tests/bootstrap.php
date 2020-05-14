@@ -12,9 +12,9 @@ $payload = array(
     "nbf" => 1357000000
 );
 
-$access_key = 'abcdefghklmnopq';
 $secret_key = '1234567890';
-
+echo Auth::getSignWithData(array('11111' => 2222, 'color' => 'red', 'above' => true), $secret_key);
+echo "\r\n";
 echo Auth::jwtEncode($payload, $key);
 //echo $auth->getSignWithData(array('11111' => 2222, 'color' => 'red', 'above' => true));
 //echo "\r\n";
