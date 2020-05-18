@@ -1,8 +1,6 @@
 <?php
 
 namespace Vva;
-use InvalidArgumentException;
-use Psr\Http\Message\ServerRequestInterface;
 use SplFileObject;
 
 use Firebase\JWT\JWT;
@@ -69,7 +67,7 @@ final class Auth
             $jwt_str = JWT::decode($jwt_encode, $jwt_key, $alg);
             return $jwt_str;
         } catch (\Exception $e) {
-            throw new \Exception($e);
+            throw new \Exception($e->getMessage());
         }
     }
 
