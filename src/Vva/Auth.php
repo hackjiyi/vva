@@ -65,15 +65,18 @@ final class Auth
      */
     public static function jwtDecode(string $jwt_encode, $jwt_key, $alg = ['HS256'])
     {
-        $jwt_str = JWT::decode($jwt_encode, $jwt_key, $alg);
-        return $jwt_str;
+        try {
+            $jwt_str = JWT::decode($jwt_encode, $jwt_key, $alg);
+            return $jwt_str;
+        } catch (\Exception $e) {
+            throw new \Exception($e);
+        }
     }
 
     /**
      * 获取文件路径
      * User: H&M
      * Date: 2020/5/14
-     * Time: 16:52
      * @param string $path
      * @return string
      * @throws \Exception
@@ -96,7 +99,6 @@ final class Auth
      * 获取文件路径
      * User: H&M
      * Date: 2020/5/14
-     * Time: 17:04
      * @param string $file
      * @return string
      * @throws \Exception
@@ -114,7 +116,6 @@ final class Auth
      * 解密验证
      * User: H&M
      * Date: 2020/5/14
-     * Time: 18:09
      * @param $jwt
      * @param array $alg
      * @return object
